@@ -25,6 +25,10 @@ block content
             ul
               each input in call.input
                 li= input
+            h4 Request Data
+            .response
+              pre
+                code= call.inputData
         .out
           h2 Success Response
           ul
@@ -40,8 +44,10 @@ block content
                 .error
                   h3 Error: #{error.name}
                   if error.description
-                    .description= error.description
-                  .status @status #{error.response.status}
+                    .description!= error.description
+                  ul
+                    each output in error.output
+                      li= output
                   pre
                     code= error.response.body
   script(src='zepto.min.js')
