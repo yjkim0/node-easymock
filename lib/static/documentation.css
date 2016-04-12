@@ -49,6 +49,9 @@ label.method {
 .delete label.method {
   background: orange;
 }
+.patch label.method {
+  background: #4C3748;
+}
 label.proxy {
   font-size: 10px;
   font-style: italic;
